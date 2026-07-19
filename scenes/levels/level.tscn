@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjr8yl2yentc" path="res://graphics/tilesets/soil.png" id="2_xb4v1"]
 [ext_resource type="Texture2D" uid="uid://vrdy2gp08qay" path="res://graphics/tilesets/soil_water.png" id="5_d4w6o"]
 [ext_resource type="Texture2D" uid="uid://cwbhys0nypuq" path="res://graphics/tilesets/roof.png" id="6_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://c75gjagk8qnls" path="res://scenes/objects/tree.tscn" id="8_ouxo3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d4w6o"]
 texture = ExtResource("1_xb4v1")
@@ -867,7 +868,6 @@ modulate = Color(1, 1, 1, 0.39215687)
 tile_set = SubResource("TileSet_wi6ju")
 
 [node name="DebugLayer" type="TileMapLayer" parent="Layers" unique_id=1465375467]
-tile_map_data = PackedByteArray("AAAOABYAAAABAAQAAAA=")
 tile_set = SubResource("TileSet_7f2x3")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1133115754]
@@ -875,5 +875,8 @@ y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=436563821 instance=ExtResource("2_b2cq8")]
 position = Vector2(186, 342)
+
+[node name="Tree" parent="Objects" unique_id=525797209 instance=ExtResource("8_ouxo3")]
+position = Vector2(126, 324)
 
 [connection signal="tool_use" from="Objects/Player" to="." method="_on_player_tool_use"]
