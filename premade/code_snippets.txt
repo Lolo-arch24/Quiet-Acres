@@ -38,7 +38,7 @@ const SEED_TEXTURES = {
 	Enum.Seed.CORN: preload("res://graphics/icons/corn.png"),
 	Enum.Seed.PUMPKIN: preload("res://graphics/icons/pumpkin.png"),
 	Enum.Seed.TOMATO: preload("res://graphics/icons/tomato.png"),
-	Enum.Seed.WHEAT: preload("res://graphics/icons/wheat.png")
+	Enum.Seed.WHEAT: preload("res://graphics/icons/wheat.png"), }
 
 # water plants
 const SOIL_DIRECTIONS = [
