@@ -3,6 +3,7 @@ extends Node2D
 var plant_scene = preload("res://scenes/objects/plant.tscn")
 var used_cells: Array[Vector2i]
 @onready var player = $Objects/Player
+@export var daytime_colour: Gradient
 
 #func _physics_process(_delta: float) -> void:
 	#var pos = player.position + player.last_direction * 16 + Vector2(0,4)
@@ -39,3 +40,9 @@ func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 			for object in get_tree().get_nodes_in_group('Objects'):
 				if object.position.distance_to(pos) < 20:
 					object.hit(tool)
+
+
+func _process(_delta: float) -> void: 
+	var daytime_point = 1 - ($Timers/DayTimer.time_left / $Timers/DayTimer.wait_time)
+	var color = daytime_colour.sample(daytime_point)
+	$Overlay/DayTimeColour.color = color
