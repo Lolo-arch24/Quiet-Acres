@@ -3,6 +3,7 @@ extends Node2D
 var plant_scene = preload("res://scenes/objects/plant.tscn")
 var used_cells: Array[Vector2i]
 @onready var player = $Objects/Player
+@onready var day_transition_material = $Overlay/CanvasLayer/DayTransitionLayer.material
 @export var daytime_colour: Gradient
 
 #func _physics_process(_delta: float) -> void:
@@ -33,8 +34,10 @@ func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 				print('no fih')
 		Enum.Tool.SEED:
 			if has_soil and grid_coord not in used_cells:
+				var plant_res = PlantResource.new()
+				plant_res.setup($Objects/Player.current_seed)
 				var plant = plant_scene.instantiate()
-				plant.setup(grid_coord, $Objects)
+				plant.setup(grid_coord, $Objects, plant_res)
 				used_cells.append(grid_coord)
 		Enum.Tool.AXE, Enum.Tool.SWORD:
 			for object in get_tree().get_nodes_in_group('Objects'):
@@ -46,3 +49,22 @@ func _process(_delta: float) -> void:
 	var daytime_point = 1 - ($Timers/DayTimer.time_left / $Timers/DayTimer.wait_time)
 	var color = daytime_colour.sample(daytime_point)
 	$Overlay/DayTimeColour.color = color
+	if Input.is_action_just_pressed("day_change"):
+		day_restart()
+
+func day_restart():
+	var tween = create_tween()
+	tween.tween_property(day_transition_material, "shader_parameter/progress", 0.0, 1.0)
+	tween.tween_interval(0.5)
+	tween.tween_callback(level_reset)
+	tween.tween_property(day_transition_material, "shader_parameter/progress", 1.0, 1.0)
+	
+	
+func level_reset():
+	for plant in get_tree().get_nodes_in_group('Plants'):
+		plant.grow(plant.coord in $Layers/WaterPatchLayer.get_used_cells())
+	$Layers/WaterPatchLayer.clear()
+	$Timers/DayTimer.start()
+	for object in get_tree().get_nodes_in_group('Objects'):
+		if 'reset' in object:
+			object.reset()

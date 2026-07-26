@@ -1,21 +1,46 @@
 [gd_scene format=3 uid="uid://dnxl72ksh50mo"]
 
 [ext_resource type="Script" uid="uid://b22v0excsfnad" path="res://scenes/objects/plant.gd" id="1_fvfks"]
-[ext_resource type="Texture2D" uid="uid://bo731a1vxrsc3" path="res://graphics/plants/corn.png" id="1_re4db"]
+[ext_resource type="Script" uid="uid://dw8283ms4ucuq" path="res://resources/plant_res.gd" id="2_0a33w"]
+[ext_resource type="PackedScene" uid="uid://co3fuq64qnheq" path="res://scenes/vfx/flash_sprite_2d.tscn" id="3_0a33w"]
+[ext_resource type="Shader" uid="uid://c7ihb750j47nd" path="res://shaders/flash.tres" id="4_yb5fs"]
+
+[sub_resource type="Resource" id="Resource_g1kv8"]
+script = ExtResource("2_0a33w")
+metadata/_custom_type_script = "uid://dw8283ms4ucuq"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrivr"]
 radius = 2.0
 height = 6.0
 
-[node name="Plant" type="StaticBody2D" unique_id=618143027]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whlcx"]
+resource_local_to_scene = true
+shader = ExtResource("4_yb5fs")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
+
+[node name="Plant" type="StaticBody2D" unique_id=618143027 groups=["Plants"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_fvfks")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1870197504]
-position = Vector2(0, -9)
-texture = ExtResource("1_re4db")
-hframes = 4
+res = SubResource("Resource_g1kv8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1452523548]
 shape = SubResource("CapsuleShape2D_xrivr")
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=1914791007]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1854257976]
+shape = SubResource("CircleShape2D_xrivr")
+
+[node name="FlashSprite2D" parent="." unique_id=2046048101 instance=ExtResource("3_0a33w")]
+material = SubResource("ShaderMaterial_whlcx")
+position = Vector2(0, -9)
+texture = null
+hframes = 4
+
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]

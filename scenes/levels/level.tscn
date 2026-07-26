@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c75gjagk8qnls" path="res://scenes/objects/tree.tscn" id="8_ouxo3"]
 [ext_resource type="PackedScene" uid="uid://6gwyp0kyciq5" path="res://scenes/objects/simple_object.tscn" id="9_icy5c"]
 [ext_resource type="Shader" uid="uid://dh1ki4hab4w4g" path="res://shaders/circle_transition.gdshader" id="10_rmjfq"]
+[ext_resource type="PackedScene" uid="uid://kosdrjh53wpa" path="res://scenes/ui/plant_info_container.tscn" id="11_7pb6i"]
 
 [sub_resource type="Gradient" id="Gradient_xrivr"]
 offsets = PackedFloat32Array(0, 0.24925816, 0.47477746, 1)
@@ -854,6 +855,7 @@ sources/0 = SubResource("TileSetAtlasSource_ouxo3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_icy5c"]
 shader = ExtResource("10_rmjfq")
+shader_parameter/progress = 1.0
 
 [node name="Level" type="Node2D" unique_id=56944631]
 script = ExtResource("1_urvlt")
@@ -893,6 +895,7 @@ position = Vector2(186, 342)
 position = Vector2(126, 324)
 
 [node name="SimpleObject" parent="Objects" unique_id=2027346312 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(224, 306)
 style = 1
 
@@ -916,10 +919,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.13319641, 0.13319641, 0.13319638, 1)
 
+[node name="PlantInfoContainer" parent="Overlay/CanvasLayer" unique_id=1397607056 instance=ExtResource("11_7pb6i")]
+
 [node name="Timers" type="Node2D" parent="." unique_id=1865949789]
 
 [node name="DayTimer" type="Timer" parent="Timers" unique_id=2131084698]
-wait_time = 180.0
+wait_time = 120.0
 one_shot = true
 autostart = true
 
