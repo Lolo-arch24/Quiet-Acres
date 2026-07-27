@@ -10,6 +10,7 @@ var current_tool: Enum.Tool = Enum.Tool.AXE
 var current_seed: Enum.Seed 
 
 signal tool_use(tool: Enum.Tool)
+signal diagnose
 
 
 func _physics_process(_delta: float) -> void:
@@ -35,6 +36,9 @@ func get_basic_input():
 	if Input.is_action_just_pressed("action"):
 		tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
 		$Animation/AnimationTree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
+	if Input.is_action_just_pressed('diagnose'):
+		diagnose.emit()
 
 
 func move():

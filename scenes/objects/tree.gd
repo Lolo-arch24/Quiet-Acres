@@ -15,6 +15,7 @@ var health := 3:
 			$CollisionShape2D.position.y = 8
 
 func _ready() -> void:
+	$FlashSprite2D.frame = [0,1]
 	create_apples(randi_range(0,3))
 
 #tree hurt animation
