@@ -891,15 +891,184 @@ y_sort_enabled = true
 [node name="Player" parent="Objects" unique_id=436563821 instance=ExtResource("2_b2cq8")]
 position = Vector2(186, 342)
 
-[node name="Tree" parent="Objects" unique_id=525797209 instance=ExtResource("8_ouxo3")]
-position = Vector2(126, 324)
+[node name="Trees" type="Node" parent="Objects" unique_id=1608232919]
 
-[node name="SimpleObject" parent="Objects" unique_id=2027346312 instance=ExtResource("9_icy5c")]
+[node name="Tree2" parent="Objects/Trees" unique_id=525797209 instance=ExtResource("8_ouxo3")]
+position = Vector2(48, 246)
+
+[node name="Tree3" parent="Objects/Trees" unique_id=894731682 instance=ExtResource("8_ouxo3")]
+position = Vector2(151, 219)
+
+[node name="Tree4" parent="Objects/Trees" unique_id=966325702 instance=ExtResource("8_ouxo3")]
+position = Vector2(247, 187)
+
+[node name="Tree5" parent="Objects/Trees" unique_id=33792021 instance=ExtResource("8_ouxo3")]
+position = Vector2(-12, 464)
+
+[node name="Tree6" parent="Objects/Trees" unique_id=499854070 instance=ExtResource("8_ouxo3")]
+position = Vector2(107, 503)
+
+[node name="Tree7" parent="Objects/Trees" unique_id=337323275 instance=ExtResource("8_ouxo3")]
+position = Vector2(51, 395)
+
+[node name="Tree9" parent="Objects/Trees" unique_id=662322216 instance=ExtResource("8_ouxo3")]
+position = Vector2(274, 517)
+
+[node name="Tree12" parent="Objects/Trees" unique_id=1440305348 instance=ExtResource("8_ouxo3")]
+position = Vector2(459, 422)
+
+[node name="Tree14" parent="Objects/Trees" unique_id=1401194296 instance=ExtResource("8_ouxo3")]
+position = Vector2(474, 293)
+
+[node name="Tree17" parent="Objects/Trees" unique_id=1524710504 instance=ExtResource("8_ouxo3")]
+position = Vector2(73, 301)
+
+[node name="Tree18" parent="Objects/Trees" unique_id=987272865 instance=ExtResource("8_ouxo3")]
+position = Vector2(68, 478)
+
+[node name="Tree19" parent="Objects/Trees" unique_id=580362679 instance=ExtResource("8_ouxo3")]
+position = Vector2(563, 388)
+
+[node name="Tree20" parent="Objects/Trees" unique_id=1041236964 instance=ExtResource("8_ouxo3")]
+position = Vector2(536, 505)
+
+[node name="Tree21" parent="Objects/Trees" unique_id=133024739 instance=ExtResource("8_ouxo3")]
+position = Vector2(567, 217)
+
+[node name="Tree23" parent="Objects/Trees" unique_id=268743805 instance=ExtResource("8_ouxo3")]
+position = Vector2(461, 584)
+
+[node name="Tree24" parent="Objects/Trees" unique_id=486593452 instance=ExtResource("8_ouxo3")]
+position = Vector2(756, 229)
+
+[node name="ShrubsAndRocks" type="Node" parent="Objects" unique_id=1517729089]
+
+[node name="SimpleObject" parent="Objects/ShrubsAndRocks" unique_id=2027346312 instance=ExtResource("9_icy5c")]
 z_index = -1
 position = Vector2(224, 306)
 style = 1
 
-[node name="SimpleObject2" parent="Objects" unique_id=786775731 instance=ExtResource("9_icy5c")]
+[node name="SimpleObject3" parent="Objects/ShrubsAndRocks" unique_id=2068117492 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(-1, 281)
+style = 1
+
+[node name="SimpleObject4" parent="Objects/ShrubsAndRocks" unique_id=1782670150 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(2, 404)
+style = 1
+
+[node name="SimpleObject5" parent="Objects/ShrubsAndRocks" unique_id=1105543043 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(39, 462)
+style = 1
+
+[node name="SimpleObject6" parent="Objects/ShrubsAndRocks" unique_id=916040006 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(139, 487)
+style = 1
+
+[node name="SimpleObject7" parent="Objects/ShrubsAndRocks" unique_id=1977587568 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(230, 500)
+style = 1
+
+[node name="SimpleObject8" parent="Objects/ShrubsAndRocks" unique_id=1941127337 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(130, 253)
+style = 1
+
+[node name="SimpleObject10" parent="Objects/ShrubsAndRocks" unique_id=386065291 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(464, 463)
+style = 1
+
+[node name="SimpleObject11" parent="Objects/ShrubsAndRocks" unique_id=1317826819 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(385, 566)
+style = 1
+
+[node name="SimpleObject12" parent="Objects/ShrubsAndRocks" unique_id=227968820 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(496, 558)
+style = 1
+
+[node name="SimpleObject13" parent="Objects/ShrubsAndRocks" unique_id=850214318 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(334, 543)
+style = 1
+
+[node name="SimpleObject14" parent="Objects/ShrubsAndRocks" unique_id=2010124 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(523, 336)
+style = 1
+
+[node name="SimpleObject15" parent="Objects/ShrubsAndRocks" unique_id=1165185188 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(-213, 258)
+style = 1
+
+[node name="SimpleObject16" parent="Objects/ShrubsAndRocks" unique_id=1794214437 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(-198, 226)
+style = 1
+
+[node name="SimpleObject17" parent="Objects/ShrubsAndRocks" unique_id=2065629292 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(186, 179)
+style = 1
+
+[node name="SimpleObject18" parent="Objects/ShrubsAndRocks" unique_id=1759518372 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(37, 192)
+style = 1
+
+[node name="SimpleObject19" parent="Objects/ShrubsAndRocks" unique_id=2031859076 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(75, 209)
+style = 1
+
+[node name="SimpleObject20" parent="Objects/ShrubsAndRocks" unique_id=205061470 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(265, 216)
+style = 1
+
+[node name="SimpleObject21" parent="Objects/ShrubsAndRocks" unique_id=590806949 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(386, 281)
+style = 1
+
+[node name="SimpleObject24" parent="Objects/ShrubsAndRocks" unique_id=608948441 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(459, 371)
+style = 1
+
+[node name="SimpleObject25" parent="Objects/ShrubsAndRocks" unique_id=254964807 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(774, 274)
+style = 1
+
+[node name="SimpleObject26" parent="Objects/ShrubsAndRocks" unique_id=442168447 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(579, 255)
+style = 1
+
+[node name="SimpleObject27" parent="Objects/ShrubsAndRocks" unique_id=1744559759 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(592, 466)
+style = 1
+
+[node name="SimpleObject28" parent="Objects/ShrubsAndRocks" unique_id=1774535659 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(369, 203)
+style = 1
+
+[node name="SimpleObject29" parent="Objects/ShrubsAndRocks" unique_id=689973187 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(463, 254)
+style = 1
+
+[node name="SimpleObject2" parent="Objects/ShrubsAndRocks" unique_id=786775731 instance=ExtResource("9_icy5c")]
 position = Vector2(179, 313)
 size = 3
 style = 1
