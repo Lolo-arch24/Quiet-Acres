@@ -61,6 +61,7 @@ func _process(_delta: float) -> void:
 	$Overlay/DayTimeColour.color = color
 	if Input.is_action_just_pressed("day_change"):
 		day_restart()
+	
 
 func day_restart():
 	var tween = create_tween()
