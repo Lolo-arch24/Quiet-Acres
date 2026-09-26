@@ -1023,7 +1023,7 @@ shader = ExtResource("10_rmjfq")
 shader_parameter/progress = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(5, 19)
+size = Vector2(5, 12)
 
 [node name="Level" type="Node2D" unique_id=56944631]
 script = ExtResource("1_urvlt")
@@ -1121,42 +1121,44 @@ size = 3
 random = true
 
 [node name="SimpleObject2" parent="Objects/ShrubsAndRocks" unique_id=786775731 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(296, 196)
-size = 2
 style = 1
 random = true
 
 [node name="SimpleObject3" parent="Objects/ShrubsAndRocks" unique_id=1405850060 instance=ExtResource("9_icy5c")]
 z_index = -1
 position = Vector2(364, 251)
-style = 1
+size = 0
 random = true
 
 [node name="SimpleObject4" parent="Objects/ShrubsAndRocks" unique_id=881657725 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(399, 168)
-size = 2
-random = true
-
-[node name="SimpleObject5" parent="Objects/ShrubsAndRocks" unique_id=13875044 instance=ExtResource("9_icy5c")]
-position = Vector2(381, 220)
-size = 3
 style = 1
 random = true
 
+[node name="SimpleObject5" parent="Objects/ShrubsAndRocks" unique_id=13875044 instance=ExtResource("9_icy5c")]
+z_index = -1
+position = Vector2(381, 220)
+size = 0
+random = true
+
 [node name="SimpleObject6" parent="Objects/ShrubsAndRocks" unique_id=1092908036 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(56, 227)
-size = 3
 random = true
 
 [node name="SimpleObject7" parent="Objects/ShrubsAndRocks" unique_id=1484576274 instance=ExtResource("9_icy5c")]
 position = Vector2(178, 175)
-size = 3
+size = 2
 style = 1
 random = true
 
 [node name="SimpleObject8" parent="Objects/ShrubsAndRocks" unique_id=701962914 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(244, 161)
-size = 3
+size = 0
 style = 1
 random = true
 
@@ -1164,66 +1166,68 @@ random = true
 z_index = -1
 position = Vector2(-24, 253)
 size = 0
-style = 1
 random = true
 
 [node name="SimpleObject10" parent="Objects/ShrubsAndRocks" unique_id=2005930038 instance=ExtResource("9_icy5c")]
 position = Vector2(-24, 392)
 size = 2
-style = 1
 random = true
 
 [node name="SimpleObject11" parent="Objects/ShrubsAndRocks" unique_id=73317531 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(-11, 410)
-size = 2
+size = 0
 style = 1
 random = true
 
 [node name="SimpleObject12" parent="Objects/ShrubsAndRocks" unique_id=979429816 instance=ExtResource("9_icy5c")]
 z_index = -1
 position = Vector2(-11, 492)
+size = 0
 random = true
 
 [node name="SimpleObject13" parent="Objects/ShrubsAndRocks" unique_id=723407561 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(130, 544)
-size = 3
+style = 1
 random = true
 
 [node name="SimpleObject14" parent="Objects/ShrubsAndRocks" unique_id=316683245 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(142, 532)
-size = 2
 random = true
 
 [node name="SimpleObject15" parent="Objects/ShrubsAndRocks" unique_id=1092792880 instance=ExtResource("9_icy5c")]
 position = Vector2(186, 540)
-size = 3
+size = 2
 random = true
 
 [node name="SimpleObject16" parent="Objects/ShrubsAndRocks" unique_id=1636506961 instance=ExtResource("9_icy5c")]
 z_index = -1
 position = Vector2(296, 573)
+size = 0
+style = 1
 random = true
 
 [node name="SimpleObject17" parent="Objects/ShrubsAndRocks" unique_id=590021696 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(769, 302)
-size = 3
-style = 1
 random = true
 
 [node name="SimpleObject18" parent="Objects/ShrubsAndRocks" unique_id=389390602 instance=ExtResource("9_icy5c")]
 position = Vector2(542, 558)
-size = 3
+size = 2
+style = 1
 random = true
 
 [node name="SimpleObject19" parent="Objects/ShrubsAndRocks" unique_id=21125086 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(484, 564)
+size = 2
 random = true
 
 [node name="SimpleObject20" parent="Objects/ShrubsAndRocks" unique_id=1507329687 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(576, 303)
-style = 1
+size = 2
 random = true
 
 [node name="Overlay" type="Node2D" parent="." unique_id=154630772]
@@ -1256,7 +1260,7 @@ collision_mask = 2
 script = ExtResource("14_8iyoh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=219689392]
-position = Vector2(0.5, -1.5)
+position = Vector2(0.5, -5)
 shape = SubResource("RectangleShape2D_13qdw")
 
 [connection signal="tool_use" from="Objects/Player" to="." method="_on_player_tool_use"]
