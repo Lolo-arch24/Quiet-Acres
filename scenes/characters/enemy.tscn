@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1a22p5mabwkp"]
 
 [ext_resource type="Texture2D" uid="uid://b466fqj7w4mne" path="res://graphics/characters/blob.png" id="1_7jb55"]
+[ext_resource type="Script" uid="uid://dfypbhsl3vdlv" path="res://scenes/characters/enemy.gd" id="1_fulqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jb55"]
 atlas = ExtResource("1_7jb55")
@@ -314,7 +315,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"move_front",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -346,8 +347,30 @@ animations = [{
 }]
 
 [node name="Enemy" type="Node2D" unique_id=222888552]
+script = ExtResource("1_fulqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1622452824]
 sprite_frames = SubResource("SpriteFrames_xrivr")
-animation = &"jump_front"
-frame_progress = 0.036041506
+animation = &"move_front"
+autoplay = "move_front"
+frame_progress = 0.48262694
+
+[node name="RayCastSouth" type="RayCast2D" parent="." unique_id=458102683]
+scale = Vector2(10, 10)
+target_position = Vector2(0, 4.2)
+collision_mask = 2
+
+[node name="RayCastWest" type="RayCast2D" parent="." unique_id=232313267]
+scale = Vector2(10, 10)
+target_position = Vector2(-4.2, 0.099999994)
+collision_mask = 2
+
+[node name="RayCastNorth" type="RayCast2D" parent="." unique_id=1573185991]
+scale = Vector2(10, 10)
+target_position = Vector2(0, -4.2)
+collision_mask = 2
+
+[node name="RayCastEast" type="RayCast2D" parent="." unique_id=1647459583]
+scale = Vector2(10, 10)
+target_position = Vector2(4.2, 0)
+collision_mask = 2

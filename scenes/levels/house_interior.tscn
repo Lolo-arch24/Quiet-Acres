@@ -112,6 +112,20 @@ tile_set = SubResource("TileSet_13qdw")
 position = Vector2(349, 291)
 texture = ExtResource("5_2a7q5")
 
+[node name="Bed" type="Sprite2D" parent="." unique_id=716138483]
+position = Vector2(351, 214)
+scale = Vector2(1.4687494, 1.3863633)
+texture = ExtResource("2_0xmub")
+
+[node name="Carpet" type="Sprite2D" parent="." unique_id=1743893154]
+position = Vector2(397, 237)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("4_twqpu")
+
+[node name="Table" type="Sprite2D" parent="." unique_id=322665957]
+position = Vector2(396, 236)
+texture = ExtResource("6_dusbx")
+
 [node name="Player" parent="." unique_id=828392481 instance=ExtResource("8_l1jo6")]
 position = Vector2(403, 288)
 
@@ -119,22 +133,9 @@ position = Vector2(403, 288)
 tile_map_data = PackedByteArray("AAAVAA0AAAAAAAEAAAAVAA4AAAAAAAEAAAAVAA8AAAAAAAEAAAAVABAAAAAAAAEAAAAVABEAAAAAAAEAAAAVABIAAAAAAAIAAAAWAA0AAQAAAAAAAAAWAA4AAQAAAAAAAAAWAA8AAQAAAAAAAAAWABAAAQAAAAAAAAAWABEAAQAAAAAAAAAWABIAAAABAAIAAAAXAAwAAAABAAAAAAAXAA0AAQAAAAAAAAAXAA4AAQAAAAAAAAAXAA8AAQAAAAAAAAAXABAAAQAAAAAAAAAXABEAAQAAAAAAAAAXABIAAAABAAIAAAAYAAwAAAABAAAAAAAYAA0AAQAAAAAAAAAYAA4AAQAAAAAAAAAYAA8AAQAAAAAAAAAYABAAAQAAAAAAAAAYABEAAQAAAAAAAAAYABIAAAABAAIAAAAZAAwAAAABAAAAAAAZAA0AAQAAAAAAAAAZAA4AAQAAAAAAAAAZAA8AAQAAAAAAAAAZABAAAQAAAAAAAAAZABEAAQAAAAAAAAAZABIAAAABAAIAAAAaAAwAAAABAAAAAAAaAA0AAQAAAAAAAAAaAA4AAQAAAAAAAAAaAA8AAQAAAAAAAAAaABAAAQAAAAAAAAAaABEAAQAAAAAAAAAaABIAAAABAAIAAAAbAAwAAAABAAAAAAAbAA0AAQAAAAAAAAAbAA4AAQAAAAAAAAAbAA8AAQAAAAAAAAAbABAAAQAAAAAAAAAbABEAAQAAAAAAAAAbABIAAAABAAIAAAAWAAwAAAABAAAAAAAVAAwAAAAAAAAAAAAcAAwAAAACAAAAAAAcAA0AAAACAAEAAAAcAA4AAAACAAEAAAAcAA8AAAACAAEAAAAcABAAAAACAAEAAAAcABEAAAACAAEAAAAcABIAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_xrivr")
 
-[node name="Bed" type="Sprite2D" parent="." unique_id=716138483]
-position = Vector2(351.25, 208.75)
-scale = Vector2(1.4687494, 1.3863633)
-texture = ExtResource("2_0xmub")
-
 [node name="Bookshelf" type="Sprite2D" parent="." unique_id=65216887]
 position = Vector2(416, 192)
 texture = ExtResource("3_l1jo6")
-
-[node name="Carpet" type="Sprite2D" parent="." unique_id=1743893154]
-position = Vector2(397, 237)
-texture = ExtResource("4_twqpu")
-
-[node name="Table" type="Sprite2D" parent="." unique_id=322665957]
-position = Vector2(396, 236)
-texture = ExtResource("6_dusbx")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1583455703]
 tile_set = SubResource("TileSet_b1lj4")
