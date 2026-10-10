@@ -7,6 +7,18 @@ var used_cells: Array[Vector2i]
 @onready var day_transition_material = $Overlay/CanvasLayer/DayTransitionLayer.material
 @export var daytime_colour: Gradient
 
+
+
+
+# In your Main/World Scene script
+#@onready var bed = $Bed
+#@onready var level = $"."
+#
+#func _ready() -> void:
+	## Connect the signal from Scene A to a function in Scene B
+	#bed.sleep.connect(level._on_sleep_received)
+
+
 #func _physics_process(_delta: float) -> void:
 	#var pos = player.position + player.last_direction * 16 + Vector2(0,4)
 	#var grid_coord: Vector2i = Vector2i(int(pos.x / Data.TILE_SIZE),int(pos.y / Data.TILE_SIZE))
@@ -49,6 +61,7 @@ func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 			for object in get_tree().get_nodes_in_group('Objects'):
 				if object.position.distance_to(pos) < 20:
 					object.hit(tool)
+					
 
 
 func _on_player_diagnose() -> void:
@@ -61,6 +74,8 @@ func _process(_delta: float) -> void:
 	$Overlay/DayTimeColour.color = color
 	if Input.is_action_just_pressed("day_change"):
 		day_restart()
+	
+	
 	
 
 func day_restart():
@@ -86,3 +101,7 @@ func level_reset():
 func plant_death(coord: Vector2i):
 	used_cells.erase(coord)
 	print(used_cells)     
+
+
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	day_restart()

@@ -24,6 +24,7 @@ func hit(tool: Enum.Tool):
 		$FlashSprite2D.flash()
 		get_apple()
 		health -= 1
+		#$AudioStreamPlayer2D.play()
 
 
 func create_apples(num: int):
