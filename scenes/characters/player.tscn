@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dbmbhotl3mjb4" path="res://scenes/characters/player.gd" id="2_76oj4"]
 [ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://graphics/characters/main/main_basic.png" id="3_6eyoc"]
 [ext_resource type="PackedScene" uid="uid://cbojlkvaiehoa" path="res://scenes/ui/tool_ui.tscn" id="3_76oj4"]
+[ext_resource type="AudioStream" uid="uid://cdymyhvnjr52r" path="res://audio/hoe.wav" id="4_dyp2m"]
+[ext_resource type="AudioStream" uid="uid://do4sqscm88cyg" path="res://audio/step.mp3" id="5_atpat"]
+[ext_resource type="AudioStream" uid="uid://c3f7txlnei6mm" path="res://audio/water.ogg" id="6_kqtwu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atpat"]
 radius = 4.0
@@ -10,6 +13,54 @@ height = 12.0
 
 [sub_resource type="Animation" id="Animation_atpat"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoeSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AxeSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Steps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlantWatering:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_2l4js"]
 resource_name = "axe_down"
@@ -39,6 +90,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"tool_use_emit"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AxeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.43298706),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_jk2m4"]
@@ -70,6 +133,18 @@ tracks/1/keys = {
 "method": &"tool_use_emit"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AxeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45846248),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_j8g38"]
 resource_name = "axe_right"
@@ -100,6 +175,18 @@ tracks/1/keys = {
 "method": &"tool_use_emit"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AxeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4605001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_xhtjm"]
 resource_name = "axe_up"
@@ -129,6 +216,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"tool_use_emit"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AxeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45234963),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_kmyvj"]
@@ -348,6 +447,18 @@ tracks/1/keys = {
 "method": &"tool_use_emit"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45438725),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_d6tgn"]
 resource_name = "hoe_left"
@@ -377,6 +488,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"tool_use_emit"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.44012398),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_aqa0x"]
@@ -408,6 +531,18 @@ tracks/1/keys = {
 "method": &"tool_use_emit"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.44623682),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_3wg1y"]
 resource_name = "hoe_up"
@@ -437,6 +572,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"tool_use_emit"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoeSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45438725),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_rp718"]
@@ -763,6 +910,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [2, 3, 4, 5]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Steps:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_6eyoc"]
 resource_name = "walk_left"
@@ -779,6 +938,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [35, 36, 37, 38]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Steps:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_dg40j"]
@@ -797,6 +968,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [68, 69, 70, 71]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Steps:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_eojnx"]
 resource_name = "walk_up"
@@ -813,6 +996,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [101, 102, 103, 104]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Steps:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_k4v7y"]
@@ -843,6 +1038,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"tool_use_emit"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlantWatering:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23228765),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_xrqxk"]
@@ -1544,7 +1751,7 @@ states/Sword/position = Vector2(643.2, -377.2)
 states/Water/node = SubResource("AnimationNodeBlendSpace2D_yyjep")
 states/Water/position = Vector2(1064.192, 87.51519)
 transitions = ["Axe", "Hoe", SubResource("AnimationNodeStateMachineTransition_n7k00"), "Hoe", "Axe", SubResource("AnimationNodeStateMachineTransition_lnpl6"), "Hoe", "Sword", SubResource("AnimationNodeStateMachineTransition_5bn3a"), "Sword", "Hoe", SubResource("AnimationNodeStateMachineTransition_tnye5"), "Axe", "Fish", SubResource("AnimationNodeStateMachineTransition_as8yd"), "Fish", "Axe", SubResource("AnimationNodeStateMachineTransition_qmarm"), "Sword", "Seed", SubResource("AnimationNodeStateMachineTransition_w5bca"), "Seed", "Sword", SubResource("AnimationNodeStateMachineTransition_j057w"), "Sword", "Water", SubResource("AnimationNodeStateMachineTransition_18mi3"), "Water", "Sword", SubResource("AnimationNodeStateMachineTransition_3uc7m"), "Sword", "Fish", SubResource("AnimationNodeStateMachineTransition_pue7u"), "Fish", "Sword", SubResource("AnimationNodeStateMachineTransition_7k8pb"), "Sword", "Axe", SubResource("AnimationNodeStateMachineTransition_5njio"), "Axe", "Sword", SubResource("AnimationNodeStateMachineTransition_aphfe"), "Seed", "Water", SubResource("AnimationNodeStateMachineTransition_dvq58"), "Water", "Seed", SubResource("AnimationNodeStateMachineTransition_qgqs5"), "Seed", "Fish", SubResource("AnimationNodeStateMachineTransition_e1rhj"), "Fish", "Seed", SubResource("AnimationNodeStateMachineTransition_qdswu"), "Seed", "Axe", SubResource("AnimationNodeStateMachineTransition_itbg4"), "Axe", "Seed", SubResource("AnimationNodeStateMachineTransition_ojpyd"), "Seed", "Hoe", SubResource("AnimationNodeStateMachineTransition_16acs"), "Hoe", "Seed", SubResource("AnimationNodeStateMachineTransition_djobu"), "Hoe", "Water", SubResource("AnimationNodeStateMachineTransition_s7nkp"), "Water", "Hoe", SubResource("AnimationNodeStateMachineTransition_csfhi"), "Hoe", "Fish", SubResource("AnimationNodeStateMachineTransition_tigr0"), "Fish", "Hoe", SubResource("AnimationNodeStateMachineTransition_5oy2u"), "Axe", "Water", SubResource("AnimationNodeStateMachineTransition_g65n5"), "Water", "Axe", SubResource("AnimationNodeStateMachineTransition_25jl8"), "Fish", "Water", SubResource("AnimationNodeStateMachineTransition_xnwxl"), "Water", "Fish", SubResource("AnimationNodeStateMachineTransition_m1gc8"), "Fish", "End", SubResource("AnimationNodeStateMachineTransition_8dtuh"), "Axe", "End", SubResource("AnimationNodeStateMachineTransition_ktr60"), "Water", "End", SubResource("AnimationNodeStateMachineTransition_jmtvv"), "Seed", "End", SubResource("AnimationNodeStateMachineTransition_jpw38"), "Sword", "End", SubResource("AnimationNodeStateMachineTransition_kvdys"), "Hoe", "End", SubResource("AnimationNodeStateMachineTransition_bl5np"), "Start", "Sword", SubResource("AnimationNodeStateMachineTransition_dyp2m")]
-graph_offset = Vector2(161.32509, -327.63913)
+graph_offset = Vector2(161.32509, -35.85903)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_inhyd"]
 nodes/output/position = Vector2(200, 213.33333)
@@ -1571,7 +1778,6 @@ script = ExtResource("2_76oj4")
 texture = ExtResource("3_6eyoc")
 hframes = 33
 vframes = 4
-frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2116134129]
 shape = SubResource("CapsuleShape2D_atpat")
@@ -1584,6 +1790,7 @@ libraries/ = SubResource("AnimationLibrary_kqtwu")
 
 [node name="AnimationTree" type="AnimationTree" parent="Animation" unique_id=575007450]
 root_node = NodePath("../..")
+callback_mode_discrete = 0
 tree_root = SubResource("AnimationNodeBlendTree_inhyd")
 anim_player = NodePath("../AnimationPlayer")
 parameters/ToolStateMachine/Axe/blend_position = Vector2(0, 0)
@@ -1603,9 +1810,21 @@ zoom = Vector2(4, 4)
 
 [node name="ToolUI" parent="." unique_id=1252937237 instance=ExtResource("3_76oj4")]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=126401423]
+[node name="AxeSound" type="AudioStreamPlayer2D" parent="." unique_id=126401423]
 stream = SubResource("AudioStreamWAV_76oj4")
+volume_db = 13.6
 bus = &"SFX"
+
+[node name="HoeSound" type="AudioStreamPlayer2D" parent="." unique_id=556550420]
+stream = ExtResource("4_dyp2m")
+volume_db = 14.39
+
+[node name="Steps" type="AudioStreamPlayer2D" parent="." unique_id=993741071]
+stream = ExtResource("5_atpat")
+volume_db = -7.102
+
+[node name="PlantWatering" type="AudioStreamPlayer2D" parent="." unique_id=1688836097]
+stream = ExtResource("6_kqtwu")
 
 [connection signal="animation_finished" from="Animation/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_started" from="Animation/AnimationTree" to="." method="_on_animation_tree_animation_started"]

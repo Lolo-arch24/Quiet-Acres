@@ -63,5 +63,4 @@ position = Vector2(9, 7)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=757187229]
 stream = SubResource("AudioStreamWAV_mbbxw")
-autoplay = true
 bus = &"SFX"

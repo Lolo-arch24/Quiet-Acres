@@ -1,40 +1,80 @@
 [gd_scene format=3 uid="uid://bmcaqh6up7mar"]
 
+[ext_resource type="Script" uid="uid://btfmms2dq2wxy" path="res://scenes/ui/fishing.gd" id="1_loy08"]
 [ext_resource type="Texture2D" uid="uid://dgumw45kjfkbn" path="res://graphics/ui/fish_frame.png" id="1_wjea5"]
 [ext_resource type="Texture2D" uid="uid://bjyisaqia5rw1" path="res://graphics/ui/bar.png" id="2_1nwnd"]
-[ext_resource type="Texture2D" uid="uid://cufccts2vhufa" path="res://graphics/icons/goldfish.png" id="3_5i1xc"]
+[ext_resource type="Script" uid="uid://bvtrn8iwvla87" path="res://scenes/ui/inside_bar.gd" id="2_5i1xc"]
+[ext_resource type="Texture2D" uid="uid://bynnb60cf2brm" path="res://graphics/icons/silverfish.png" id="3_wjea5"]
+[ext_resource type="Texture2D" uid="uid://cpv12fur04hkk" path="res://graphics/ui/fish_progress_bg.png" id="6_7hinf"]
+[ext_resource type="Texture2D" uid="uid://big0akfwjmocq" path="res://graphics/ui/fish_progress.png" id="7_ouqcw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(14, 46)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lj4"]
+size = Vector2(10, 41.941746)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(12, 30)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njqwk"]
+size = Vector2(8, 9.320388)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi6ju"]
+size = Vector2(14.769231, 14.285715)
 
 [node name="Fishing" type="Node2D" unique_id=1269702700]
+script = ExtResource("1_loy08")
 
-[node name="Outside" type="Sprite2D" parent="." unique_id=1480490556]
+[node name="Outside" type="Sprite2D" parent="." unique_id=1615737390]
+scale = Vector2(1, 2.1458335)
 texture = ExtResource("1_wjea5")
 
-[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Outside" unique_id=1653682340]
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Outside" unique_id=1091337262]
 node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../RigidBody2D")
-length = 400.0
-initial_offset = 1.0
+length = 26.0
+initial_offset = 9.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Outside" unique_id=518336044]
+[node name="StaticBody2D" type="StaticBody2D" parent="Outside" unique_id=371071625]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/StaticBody2D" unique_id=2142268229]
-visible = false
-shape = SubResource("RectangleShape2D_xrivr")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/StaticBody2D" unique_id=1178673514]
+position = Vector2(0, 4.4443073e-07)
+shape = SubResource("RectangleShape2D_b1lj4")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Outside" unique_id=35470038]
+[node name="RigidBody2D" type="RigidBody2D" parent="Outside" unique_id=1722450496]
+script = ExtResource("2_5i1xc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/RigidBody2D" unique_id=329557551]
-shape = SubResource("RectangleShape2D_13qdw")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/RigidBody2D" unique_id=1814733915]
+position = Vector2(0, -2.2221536e-07)
+shape = SubResource("RectangleShape2D_njqwk")
 
-[node name="Inside" type="Sprite2D" parent="Outside/RigidBody2D" unique_id=2038069614]
+[node name="Inside" type="Sprite2D" parent="Outside/RigidBody2D" unique_id=914327447]
+position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(0.71428573, 0.29126212)
 texture = ExtResource("2_1nwnd")
 
-[node name="Fish" type="Sprite2D" parent="." unique_id=1935241692]
-scale = Vector2(0.555, 0.56)
-texture = ExtResource("3_5i1xc")
+[node name="Fish" type="Sprite2D" parent="." unique_id=501279115]
+position = Vector2(0, 1.1920929e-07)
+scale = Vector2(0.5416667, 0.7)
+texture = ExtResource("3_wjea5")
+
+[node name="Area2D" type="Area2D" parent="Fish" unique_id=382751674]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish/Area2D" unique_id=455664477]
+position = Vector2(2.2007869e-07, -8.514956e-07)
+scale = Vector2(1, 1.0000001)
+shape = SubResource("RectangleShape2D_wi6ju")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=758519926]
+unique_name_in_owner = true
+offset_left = 28.0
+offset_top = -15.0
+offset_right = 38.0
+offset_bottom = 32.0
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("6_7hinf")
+texture_progress = ExtResource("7_ouqcw")
+
+[node name="Timer" type="Timer" parent="." unique_id=1029440998]
+wait_time = 0.2
+autostart = true
+
+[connection signal="body_entered" from="Fish/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Fish/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
