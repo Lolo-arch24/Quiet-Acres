@@ -11,11 +11,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	#if is_on_floor():
 		#direction == 0
 	
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	is_on_bar = true
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	is_on_bar = false
 
 

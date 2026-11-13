@@ -28,7 +28,6 @@ texture = ExtResource("1_wjea5")
 [node name="GrooveJoint2D" type="GrooveJoint2D" parent="Outside" unique_id=1091337262]
 node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../RigidBody2D")
-bias = 0.9
 length = 26.0
 initial_offset = 9.0
 
@@ -52,12 +51,14 @@ scale = Vector2(0.71428573, 0.66990286)
 texture = ExtResource("2_1nwnd")
 
 [node name="Fish" type="Sprite2D" parent="." unique_id=501279115]
+visible = false
 position = Vector2(0, 1.1920929e-07)
 scale = Vector2(0.5416667, 0.7)
 texture = ExtResource("3_wjea5")
 script = ExtResource("6_ouqcw")
 
 [node name="Area2D" type="Area2D" parent="Fish" unique_id=382751674]
+collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish/Area2D" unique_id=455664477]

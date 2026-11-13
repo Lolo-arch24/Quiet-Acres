@@ -1193,62 +1193,58 @@ position = Vector2(756, 229)
 [node name="ShrubsAndRocks" type="Node" parent="Objects" unique_id=1517729089]
 
 [node name="SimpleObject" parent="Objects/ShrubsAndRocks" unique_id=2027346312 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(95, 287)
+size = 3
 style = 1
 random = true
 
 [node name="SimpleObject2" parent="Objects/ShrubsAndRocks" unique_id=786775731 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(296, 196)
-style = 1
+size = 3
 random = true
 
 [node name="SimpleObject3" parent="Objects/ShrubsAndRocks" unique_id=1405850060 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(364, 251)
-size = 2
+size = 0
 random = true
 
 [node name="SimpleObject4" parent="Objects/ShrubsAndRocks" unique_id=881657725 instance=ExtResource("9_icy5c")]
 position = Vector2(399, 168)
-size = 3
+size = 2
+style = 1
 random = true
 
 [node name="SimpleObject5" parent="Objects/ShrubsAndRocks" unique_id=13875044 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(381, 220)
-style = 1
+size = 3
 random = true
 
 [node name="SimpleObject6" parent="Objects/ShrubsAndRocks" unique_id=1092908036 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(56, 227)
-size = 0
-style = 1
-random = true
-
-[node name="SimpleObject7" parent="Objects/ShrubsAndRocks" unique_id=1484576274 instance=ExtResource("9_icy5c")]
-position = Vector2(178, 175)
 size = 2
 random = true
 
-[node name="SimpleObject8" parent="Objects/ShrubsAndRocks" unique_id=701962914 instance=ExtResource("9_icy5c")]
+[node name="SimpleObject7" parent="Objects/ShrubsAndRocks" unique_id=1484576274 instance=ExtResource("9_icy5c")]
 z_index = -1
-position = Vector2(244, 161)
+position = Vector2(178, 175)
 size = 0
 style = 1
+random = true
+
+[node name="SimpleObject8" parent="Objects/ShrubsAndRocks" unique_id=701962914 instance=ExtResource("9_icy5c")]
+position = Vector2(244, 161)
+size = 3
 random = true
 
 [node name="SimpleObject9" parent="Objects/ShrubsAndRocks" unique_id=1602647238 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(-24, 253)
-size = 0
-style = 1
+size = 2
 random = true
 
 [node name="SimpleObject10" parent="Objects/ShrubsAndRocks" unique_id=2005930038 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(-24, 392)
-size = 3
 random = true
 
 [node name="SimpleObject11" parent="Objects/ShrubsAndRocks" unique_id=73317531 instance=ExtResource("9_icy5c")]
@@ -1259,12 +1255,14 @@ random = true
 
 [node name="SimpleObject12" parent="Objects/ShrubsAndRocks" unique_id=979429816 instance=ExtResource("9_icy5c")]
 position = Vector2(-11, 492)
-size = 3
+size = 2
+style = 1
 random = true
 
 [node name="SimpleObject13" parent="Objects/ShrubsAndRocks" unique_id=723407561 instance=ExtResource("9_icy5c")]
 z_index = -1
 position = Vector2(130, 544)
+size = 0
 style = 1
 random = true
 
@@ -1274,37 +1272,38 @@ size = 3
 random = true
 
 [node name="SimpleObject15" parent="Objects/ShrubsAndRocks" unique_id=1092792880 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(186, 540)
-size = 2
 random = true
 
 [node name="SimpleObject16" parent="Objects/ShrubsAndRocks" unique_id=1636506961 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(296, 573)
-size = 2
 style = 1
 random = true
 
 [node name="SimpleObject17" parent="Objects/ShrubsAndRocks" unique_id=590021696 instance=ExtResource("9_icy5c")]
-z_index = -1
 position = Vector2(769, 302)
-size = 0
+size = 3
 style = 1
 random = true
 
 [node name="SimpleObject18" parent="Objects/ShrubsAndRocks" unique_id=389390602 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(542, 558)
-size = 2
+style = 1
 random = true
 
 [node name="SimpleObject19" parent="Objects/ShrubsAndRocks" unique_id=21125086 instance=ExtResource("9_icy5c")]
+z_index = -1
 position = Vector2(484, 564)
-size = 3
+size = 0
 style = 1
 random = true
 
 [node name="SimpleObject20" parent="Objects/ShrubsAndRocks" unique_id=1507329687 instance=ExtResource("9_icy5c")]
 position = Vector2(576, 303)
-size = 3
+size = 2
 random = true
 
 [node name="Overlay" type="Node2D" parent="." unique_id=154630772]
@@ -1323,6 +1322,7 @@ grow_vertical = 2
 color = Color(0.13319641, 0.13319641, 0.13319638, 1)
 
 [node name="PlantInfoContainer" parent="Overlay/CanvasLayer" unique_id=1397607056 instance=ExtResource("11_7pb6i")]
+visible = false
 
 [node name="Timers" type="Node2D" parent="." unique_id=1865949789]
 
