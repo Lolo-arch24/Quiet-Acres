@@ -30,6 +30,7 @@ Music="*uid://di4syyekbm070"
 window/size/viewport_width=1320
 window/size/viewport_height=600
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="uid://b114h26blm1xk"
 
 [editor_plugins]
 

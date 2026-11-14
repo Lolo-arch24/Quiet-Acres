@@ -2,6 +2,45 @@
 
 [ext_resource type="Texture2D" uid="uid://dde4bkgf2agp1" path="res://graphics/fonts/Screenshot 2026-11-11 034341.png" id="1_bobbp"]
 [ext_resource type="FontFile" uid="uid://br6swoqrm86fw" path="res://graphics/fonts/Modak-Regular.ttf" id="1_ogdaj"]
+[ext_resource type="Texture2D" uid="uid://dq41d1du4gxc6" path="res://ui/ProgressBarFill1_wood.png" id="3_01ge7"]
+
+[sub_resource type="GDScript" id="GDScript_13qdw"]
+script/source = "extends Control
+
+@onready var main_buttons: VBoxContainer = $MainButtons
+@onready var settings_panel: Panel = $SettingsPanel
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	main_buttons.visible = true 
+	settings_panel.visible = false
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
+
+func _on_start_game_pressed() -> void:
+	print(\"スタート\")
+	get_tree().change_scene_to_file(\"res://scenes/levels/level.tscn\")
+
+
+func _on_settings_pressed() -> void:
+	print(\"オプション\")
+	main_buttons.visible = false
+	settings_panel.visible = true
+	
+
+
+func _on_exit_pressed() -> void:
+	print(\"バイバイ\")
+	get_tree().quit()
+
+
+func _on_back_pressed() -> void:
+	_ready()
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xrivr"]
 texture = ExtResource("1_bobbp")
@@ -29,6 +68,19 @@ shadow_offset = Vector2(0, 6.255)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01ge7"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wi6ju"]
+texture = ExtResource("3_01ge7")
+texture_margin_top = 10.0
+modulate_color = Color(0.4640441, 0.18739274, 0.0053171003, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gg7vo"]
+color = Color(0.4380413, 0.60551685, 0.25939274, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_01ge7"]
+color = Color(0.31732905, 0.44575894, 0.17933246, 1)
+thickness = 10
+
 [node name="StartMenu" type="Control" unique_id=175748584]
 layout_mode = 3
 anchors_preset = 15
@@ -36,8 +88,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_13qdw")
 
-[node name="Panel" type="Panel" parent="." unique_id=1896055759]
+[node name="Background" type="Panel" parent="." unique_id=1896055759]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +99,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xrivr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2037970089]
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=2037970089]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,7 +115,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="StartGame" type="Button" parent="VBoxContainer" unique_id=1300792368]
+[node name="StartGame" type="Button" parent="MainButtons" unique_id=1300792368]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_pressed_color = Color(0.7372549, 0.3137255, 0.015686275, 1)
@@ -74,7 +128,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bobbp")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_01ge7")
 text = "Start game"
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1731872391]
+[node name="Settings" type="Button" parent="MainButtons" unique_id=1731872391]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_pressed_color = Color(0.7372549, 0.3137255, 0.015686275, 1)
@@ -87,7 +141,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bobbp")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_01ge7")
 text = "Options"
 
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1502087542]
+[node name="Exit" type="Button" parent="MainButtons" unique_id=1502087542]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_pressed_color = Color(0.7372549, 0.3137255, 0.015686275, 1)
@@ -132,3 +186,76 @@ theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("1_ogdaj")
 theme_override_font_sizes/font_size = 170
 text = "Acres"
+
+[node name="SettingsPanel" type="Panel" parent="." unique_id=1928278394]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.5
+offset_top = -270.875
+offset_right = 317.5
+offset_bottom = 270.875
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsPanel" unique_id=1900516355]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 79.875
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ogdaj")
+theme_override_font_sizes/font_size = 61
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="SettingsPanel" unique_id=1479436340]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -95.875
+offset_right = 186.5
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_pressed_color = Color(0.7372549, 0.3137255, 0.015686275, 1)
+theme_override_colors/font_hover_color = Color(0.7354806, 0.3130618, 0.015199691, 1)
+theme_override_fonts/font = ExtResource("1_ogdaj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gg7vo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gg7vo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bobbp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01ge7")
+text = "Back"
+
+[node name="HSlider" type="HSlider" parent="SettingsPanel" unique_id=746096059]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.75
+offset_top = -92.0
+offset_right = 216.75
+offset_bottom = -53.125
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxTexture_wi6ju")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_gg7vo")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_01ge7")
+value = 50.0
+
+[connection signal="pressed" from="MainButtons/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="SettingsPanel/Back" to="." method="_on_back_pressed"]
